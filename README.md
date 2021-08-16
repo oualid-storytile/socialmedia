@@ -8,12 +8,14 @@ You need to create an application (Facebook, Twitter) and create your credential
 ## Installation
 
 ```
-composer require storytile-oualid/socialmedia
+composer config repositories.oualid-storytile/socialmedia vcs https://github.com/oualid-storytile/socialmedia
+composer require oualid-storytile/socialmedia
+composer require oualid-storytile/socialmedia
 ```
 
 ## Configuration
-
-Add the file config/socialmedia to your laravel project configuration. 
+Add the file Database/migrations/2021_08_10_130951_create_user_socials_table.php to your migrations
+Add the file config/socialmedia.php to your laravel project configuration. 
 Set the below environment variables in your `.env`.
 
 ```
@@ -26,6 +28,8 @@ INSTAGRAM_REDIRECT_URL=
 TWITTER_CONSUMER_KEY=
 TWITTER_CONSUMER_SECRET=
 ```
+
+to get data take a look on Exemple/Socialcontroller.php
 
 
 Laravel Socialite is open-sourced software licensed under the [MIT license](LICENSE.md).
