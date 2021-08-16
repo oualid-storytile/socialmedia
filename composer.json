@@ -1,0 +1,53 @@
+{
+    "name": "oualid-storytile/socialmedia",
+    "description": "\"Social media\"",
+    "type": "project",
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.0|^7.0",
+        "illuminate/http": "^6.0|^7.0|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0"
+    },
+    "require-dev": {
+        "illuminate/contracts": "^6.0|^7.0",
+        "mockery/mockery": "^1.0",
+        "orchestra/testbench": "^4.0|^5.0|^6.0",
+        "phpunit/phpunit": "^8.0|^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Oualid-storytile\\Socialmedia\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Oualid-storytile\\Socialmedia\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "dev"
+        },
+        "laravel": {
+            "providers": [
+                "Oualid-storytile\\Socialmedia\\SocialmediaServiceProvider"
+            ],
+            "aliases": {
+                "Socialite": "Oualid-storytile\\Socialmedia\\Facades\\Socialmedia"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oualid",
+            "email": "oualid@storytile.net"
+        }
+    ]
+}
