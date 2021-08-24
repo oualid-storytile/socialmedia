@@ -3,20 +3,19 @@
 
 Storytile socialmedia provides an interface to OAuth authentication and search with Facebook, Instagram and Twitter.
 
-You need to create an application (Facebook, Twitter) and create your credentials in
+You need to create an application (Facebook, Twitter) and create your credentials in the your project file ".env"
 
 ## Installation
 
 ```
-composer config repositories.oualid-storytile/socialmedia vcs https://github.com/oualid-storytile/socialmedia
-composer require oualid-storytile/socialmedia
-composer require oualid-storytile/socialmedia
+composer require oualidstorytile/socialmedia
 ```
 
 ## Configuration
-Add the file Database/migrations/2021_08_10_130951_create_user_socials_table.php to your migrations
-Add the file config/socialmedia.php to your laravel project configuration. 
-Set the below environment variables in your `.env`.
+
+* Add the file Database/migrations/2021_08_10_130951_create_user_socials_table.php to your migrations folder(rename the table if the name is used) 
+* Add the file config/socialmedia.php to your laravel project configuration. 
+* Set the below environment variables in your `.env`.
 
 ```
 FACEBOOK_APP_ID=
