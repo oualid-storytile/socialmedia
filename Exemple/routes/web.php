@@ -19,8 +19,6 @@ Route::get('/{provider}/redirect', 'SocialLoginController@callback');
 // after(optional) will be used for link to get next page
 Route::get('/{provider}/search/{tag}/{type?}/{after?}', 'SocialLoginController@search')->name('search');
 
-// type(mandatory): has one of the values hashtag or user
-//Route::get('/twitter/{type}/search/{tag}', 'SocialLoginController@searchTwitter')->name('search-twitter');
 
 Auth::routes();
 

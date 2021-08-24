@@ -35,11 +35,6 @@
             }
         }
     },
-    "config": {
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "license": "MIT",
     "authors": [
         {
