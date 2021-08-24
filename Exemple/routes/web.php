@@ -17,10 +17,10 @@ Route::get('/{provider}/redirect', 'SocialLoginController@callback');
 
 // tag(mandatory) has the value of the word we are searching
 // after(optional) will be used for link to get next page
-Route::get('/{provider}/search/{tag}/{after?}', 'SocialLoginController@search')->name('search');
+Route::get('/{provider}/search/{tag}/{type?}/{after?}', 'SocialLoginController@search')->name('search');
 
 // type(mandatory): has one of the values hashtag or user
-Route::get('/twitter/{type}/search/{tag}', 'SocialLoginController@searchTwitter')->name('search-twitter');
+//Route::get('/twitter/{type}/search/{tag}', 'SocialLoginController@searchTwitter')->name('search-twitter');
 
 Auth::routes();
 

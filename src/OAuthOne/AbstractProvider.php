@@ -45,6 +45,19 @@ abstract class AbstractProvider implements ProviderContract
     }
 
     /**
+     * Set the request instance.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return $this
+     */
+    public function setRequest(Request $request)
+    {
+        $this->request = $request;
+
+        return $this;
+    }
+
+    /**
      * Redirect the user to the authentication page for the provider.
      *
      * @return \Illuminate\Http\RedirectResponse
@@ -129,18 +142,5 @@ abstract class AbstractProvider implements ProviderContract
         $this->userHash = $this->userHash ?: $newHash;
 
         return false;
-    }
-
-    /**
-     * Set the request instance.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return $this
-     */
-    public function setRequest(Request $request)
-    {
-        $this->request = $request;
-
-        return $this;
     }
 }

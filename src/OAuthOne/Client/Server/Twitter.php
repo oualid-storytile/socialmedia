@@ -2,12 +2,7 @@
 
 namespace Storytile\Socialmedia\OAuthOne\Client\Server;
 
-use App\Social;
-use GuzzleHttp\Exception\BadResponseException;
-use Illuminate\Support\Facades\Auth;
 use Storytile\Socialmedia\OAuthOne\Client\Credentials\ClientCredentials;
-use Storytile\Socialmedia\OAuthOne\Client\Credentials\CredentialsException;
-use Storytile\Socialmedia\OAuthOne\Client\Credentials\TemporaryCredentials;
 use Storytile\Socialmedia\OAuthOne\Client\Credentials\TokenCredentials;
 
 class Twitter extends Server
@@ -59,7 +54,6 @@ class Twitter extends Server
             'secret' => $tokenSecret,
         ]);
     }
-
 
     /**
      * @inheritDoc
