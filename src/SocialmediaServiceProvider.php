@@ -15,7 +15,7 @@ class SocialmediaServiceProvider extends ServiceProvider implements DeferrablePr
      */
     public function register()
     {
-        $this->app->singleton(Factory::class, function ($app) {
+        $this->app->bind(Factory::class, function ($app) {
             return new SocialmediaManager($app);
         });
     }
