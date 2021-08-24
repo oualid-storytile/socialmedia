@@ -1,5 +1,5 @@
 {
-    "name": "oualidstorytile/socialmedia",
+    "name": "oualid-storytile/socialmedia",
     "description": "Social media",
     "type": "library",
     "require": {
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Oualid-storytile\\Socialmedia\\": "src/"
+            "Oualid-storytile\\Socialmedia\\": "src"
         }
     },
     "autoload-dev": {
@@ -28,10 +28,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SocialmediaServiceProvider"
+                "Oualid-storytile\\Socialmedia\\SocialmediaServiceProvider"
             ],
             "aliases": {
-                "Socialmedia": "Facades\\Socialmedia"
+                "Socialmedia": "Oualid-storytile\\Socialmedia\\Facades\\Socialmedia"
             }
         }
     },
