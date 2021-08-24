@@ -1,6 +1,6 @@
 {
-    "name": "oualid-storytile/socialmedia",
-    "description": "\"Social media\"",
+    "name": "oualidstorytile/socialmedia",
+    "description": "Social media",
     "type": "library",
     "require": {
         "php": "^7.2",
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Oualid-storytile\\Socialmedia\\": "src"
+            "Oualid-storytile\\Socialmedia\\": "src/"
         }
     },
     "autoload-dev": {
