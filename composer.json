@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Oualid-storytile\\Socialmedia\\": "src"
+            "Storytile\\Socialmedia\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Oualid-storytile\\Socialmedia\\Tests\\": "tests"
+            "Storytile\\Socialmedia\\Tests\\": "tests"
         }
     },
     "extra": {
