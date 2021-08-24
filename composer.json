@@ -26,9 +26,6 @@
         }
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "dev"
-        },
         "laravel": {
             "providers": [
                 "Oualid-storytile\\Socialmedia\\SocialmediaServiceProvider"
