@@ -28,10 +28,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SocialmediaServiceProvider"
+                "Storytile\\Socialmedia\\SocialmediaServiceProvider"
             ],
             "aliases": {
-                "Socialmedia": "Facades\\Socialmedia"
+                "Socialmedia": "Storytile\\Socialmedia\\Facades\\Socialmedia"
             }
         }
     },

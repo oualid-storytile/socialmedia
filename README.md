@@ -32,4 +32,4 @@ TWITTER_CONSUMER_SECRET=
 to get data take a look on Exemple/Socialcontroller.php
 
 
-Laravel Socialite is open-sourced software licensed under the [MIT license](LICENSE.md).
+Storytile Socialmedia is open-sourced software licensed under the [MIT license](LICENSE.md).
