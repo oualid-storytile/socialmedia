@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Social;
 use Illuminate\Support\Facades\Auth;
-use Atymic\Twitter\Facade\Twitter;
 use Storytile\Socialmedia\Facades\Socialmedia;
 use Storytile\Socialmedia\OAuthOne\TwitterProvider;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -18,7 +17,6 @@ class SocialLoginController extends Controller
      */
     public function redirect(string $provider)
     {
-        //$social = Social::where("user_id", Auth::user()->id)->where("type", "twitter")->first();
         return Socialmedia::driver($provider)->redirect();
     }
 
@@ -63,7 +61,7 @@ class SocialLoginController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function search(string $provider, string $tag, string $after = null)
+    public function search(string $provider, string $tag, string $type = null, string $after = null)
     {
         $social = Social::where("user_id", Auth::user()->id)->where("type", $provider)->first();
         $response = [];
@@ -76,35 +74,43 @@ class SocialLoginController extends Controller
         }
 
         if ($provider === "facebook") {
-
+            // Get pages from page name
             $response = Socialmedia::with($provider)
                 ->fields(["id","name","location","link"])
                 ->searchPages($tag, $social->token);
+
+            //Get pages posts from page id
+            /*$response = Socialmedia::with($provider)
+                ->fields(["id","name","location","link"])
+                ->searchPagesPosts($pageId, $social->token);
+            */
 
             dd($response);
         }
 
         if ($provider === "twitter") {
+            if ($type === "users") {
+                // Get Users
+                $response =  Socialmedia::with($provider)->search(
+                    TwitterProvider::TWITTER_ENDPOINT_USERS_SEARCH,
+                    $social->token,
+                    $social->api_data["tokenSecret"], [
+                        'q' => $tag,
+                        'result_type' => 'popular',
+                        'count' => "100"]
+                );
+            } elseif ($type === "hashtag") {
+                // Get tweets from Hashtag
+                $response =  Socialmedia::with($provider)->search(
+                    TwitterProvider::TWITTER_ENDPOINT_TWEETS_SEARCH,
+                    $social->token,
+                    $social->api_data["tokenSecret"], [
+                        'q' => $tag,
+                        'result_type' => 'popular',
+                        'count' => "100"]
+                );
+            }
 
-            // Get Users
-            $response =  Socialmedia::with($provider)->search(
-                TwitterProvider::TWITTER_ENDPOINT_USERS_SEARCH,
-                $social->token,
-                $social->api_data["tokenSecret"], [
-                    'q' => $tag,
-                    'result_type' => 'popular',
-                    'count' => "100"]
-            );
-
-            // Get Tweets
-            /*$response =  Socialmedia::with($provider)->search(
-                TwitterProvider::TWITTER_ENDPOINT_TWEETS_SEARCH,
-                $social->token,
-                $social->api_data["tokenSecret"], [
-                    'q' => $tag,
-                    'result_type' => 'popular',
-                    'count' => "100"]
-            );*/
             dd($response);
         }
         //dd($response);

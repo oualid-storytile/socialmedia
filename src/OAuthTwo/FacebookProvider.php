@@ -80,7 +80,7 @@ class FacebookProvider extends Facebook
      * @throws FacebookGraphException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function searchPagesPost($pageId, $accessToken)
+    public function searchPagesPosts($pageId, $accessToken)
     {
         //Fields e.g: ["id","caption","children","comment_count","like_count","media_type","media_url","permalink"]
         $hashtagUrl = $this->graphUrl.'/'.$this->version.'/'.$pageId.'/'.self::FACEBOOK_ENDPOINT_POSTS_SEARCH.'?fields='.implode(',', $this->fields).'&access_token='.$accessToken;
