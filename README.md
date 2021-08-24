@@ -13,7 +13,7 @@ composer require oualidstorytile/socialmedia
 
 ## Configuration
 
-* In the file `config/app.php` add to providers "Storytile\Socialmedia\SocialmediaServiceProvider::class" and add to aliases "Storytile\Socialmedia\Facades\Socialmedia::class"
+* In the file `config/app.php` add to `providers` "Storytile\Socialmedia\SocialmediaServiceProvider::class" and add to `aliases` "Storytile\Socialmedia\Facades\Socialmedia::class"
 * Add the file Database/migrations/2021_08_10_130951_create_user_socials_table.php to your migrations folder(rename the table if the name is used) and run migration 
 * Add the file config/socialmedia.php to your laravel project configuration. 
 * Set the below environment variables in your `.env`.
