@@ -34,7 +34,7 @@
                 "Oualid-storytile\\Socialmedia\\SocialmediaServiceProvider"
             ],
             "aliases": {
-                "Socialite": "Oualid-storytile\\Socialmedia\\Facades\\Socialmedia"
+                "Socialmedia": "Oualid-storytile\\Socialmedia\\Facades\\Socialmedia"
             }
         }
     },
