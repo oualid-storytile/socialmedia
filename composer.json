@@ -1,7 +1,7 @@
 {
     "name": "oualid-storytile/socialmedia",
     "description": "\"Social media\"",
-    "type": "project",
+    "type": "library",
     "require": {
         "php": "^7.2",
         "ext-json": "*",
