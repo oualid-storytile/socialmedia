@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 // Provider can have only one of the values: twitter, facebook, instagram
 // Redirect users to the Social Media login page
 Route::get('/{provider}/login/', 'SocialLoginController@redirect')->name('provider.login');
@@ -18,11 +7,7 @@ Route::get('/{provider}/login/', 'SocialLoginController@redirect')->name('provid
 Route::get('/{provider}/redirect', 'SocialLoginController@callback');
 
 // tag(mandatory) has the value of the word we are searching
-// type(mandatory) for Twitter has the value "users" or "hashtag"
+// type(mandatory and only for Twitter has the value "users" or "hashtag")
+// instead of type use page id as parameter to get posts from facebook page
 // after(optional) will be used for link to get next page
-Route::get('/{provider}/search/{tag}/{type?}/{after?}', 'SocialLoginController@search')->name('search');
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/{provider}/search/{tag}/{type?}', 'SocialLoginController@search')->name('search');

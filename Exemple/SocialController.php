@@ -79,9 +79,9 @@ class SocialLoginController extends Controller
                 ->fields(["id","name","location","link"])
                 ->searchPages($tag, $social->token);
 
-            //Get pages posts from page id
+            //Get pages posts from page id as parameter replace type with page id
             /*$response = Socialmedia::with($provider)
-                ->fields(["id","name","location","link"])
+                ->fields("id","from{name,username,picture}","created_time","attachments{description,unshimmed_url,title,target{id},media_type}","message","message_tags","permalink_url","picture","full_picture","properties")
                 ->searchPagesPosts($pageId, $social->token);
             */
 
